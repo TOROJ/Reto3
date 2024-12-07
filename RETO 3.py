@@ -27,8 +27,8 @@ class  Almuerzo(MenuItem):
             self.sopa = "sin sopa"
             self.precio = self.precio -500
 
-    def mostrar(self):
-        return f"El cliente pidio {self.nombre,self.sopa}, eso cuesta: \n{self.precio} "
+  #  def mostrar(self):
+  #      return f"El cliente pidio {self.nombre,self.sopa}, eso cuesta: \n{self.precio} "
     
 
 class Jugo(MenuItem):                                            
@@ -41,8 +41,8 @@ class Jugo(MenuItem):
             self.precio = self.precio +1500
     
     
-    def mostrar(self):
-        return f"El cliente pidio {self.nombre,self.agua}, eso cuesta: \n{self.precio} "
+#    def mostrar(self):
+#        return f"El cliente pidio {self.nombre,self.agua}, eso cuesta: \n{self.precio} "
     
         
 class Postre(MenuItem):
@@ -55,8 +55,8 @@ class Postre(MenuItem):
             self.precio = self.precio +2000
 
 
-    def mostrar(self):
-        return f"El cliente pidio {self.nombre,self.grande}, eso cuesta: \n{self.precio} "
+  #  def mostrar(self):
+  #      return f"El cliente pidio {self.nombre,self.grande}, eso cuesta: \n{self.precio} "
         
 
 class Order:
@@ -75,13 +75,24 @@ class Order:
         return self.total
 
     
-    def mostrar(self):
-        return f"{self.lista_cuenta},con un total de { self.total}"   
+#    def mostrar(self):
+ #       return f"{self.lista_cuenta},con un total de { self.total}"   
 
 #probamos el codigo
 cliente = Order()                                             
-cliente.añadidura(Jugo("maracuya", 2500, False))   
+cliente.añadidura(Jugo("maracuya", 5000, False))   
 cliente.añadidura(Almuerzo("corriente", 12000, False))
-cliente.añadidura(Postre("wafles", 3000, False))
+cliente.añadidura(Postre("wafles", 2500, True))
+cliente.añadidura(Jugo("fresa", 5000, True))   
+cliente.añadidura(Almuerzo("pescado", 20000, False))
+cliente.añadidura(Postre("fresas con crema", 3000, True))
+cliente.añadidura(Jugo("mora", 5000, False))   
+cliente.añadidura(Almuerzo("bandeja paisa", 25000, True))
+cliente.añadidura(Postre("arequipe", 1000, True))
+cliente.añadidura(Jugo("mango", 5000, True))   
+cliente.añadidura(Almuerzo("corriente", 25000, True))
+cliente.añadidura(Postre("brownie", 1000, True))
 
-print(f"Total before discount: ${cliente.cuenta()}")
+print(f"Total a pagar: ${cliente.cuenta()} pesos ")
+
+#si no estoy mal 119.500 pesos
